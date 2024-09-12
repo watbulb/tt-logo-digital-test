@@ -29,9 +29,11 @@ module tt_um_example (
   wire _unused = &{ena, clk, rst_n, 1'b0};
 
   // Add logo design
+`ifndef GL_TEST
 `ifdef USE_LOGO
   (* keep *)
   `LOGO_NAME `LOGO_INSTANCE();
-`endif  
+`endif
+`endif
 
 endmodule

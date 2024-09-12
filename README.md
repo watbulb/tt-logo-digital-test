@@ -366,13 +366,16 @@ Instantiate the blackbox module macro inside the top-level module:
 
 ```verilog
 project.v:
+...
 module tt_um_example (
   ...
 );
-  // Add logo design
+// Add logo design
+`ifndef GL_TEST
 `ifdef USE_LOGO
   (* keep *)
   `LOGO_NAME `LOGO_INSTANCE();
+`endif
 `endif
 ...
 endmodule
