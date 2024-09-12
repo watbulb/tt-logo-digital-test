@@ -118,6 +118,10 @@ In the case of Uri Shaked's Skullfet art, these parts are FETs and thus require 
 
 If the logo is placed on the bottom corner of the design, the PDN may not like it, move it up and to the left/right a little bit.
 
+**6. Make sure the cell name of your logo is `logo`:**
+
+In-order for the steps in this respository to work correctly, the cell name of the logo art needs to be `logo`. If you'd like to change this, check the integration steps below.
+
 ## Logo Input Types
 
 ### MAG Logos
