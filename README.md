@@ -2,7 +2,7 @@
 
 # TT Logo Digital Integration Test
 
-<img src="https://gist.github.com/user-attachments/assets/bd1f78d2-e0bd-4a09-9315-db7b8d264822" width="80%" height="80%">
+<img src="docs/readme-ss.png" width="80%" height="80%">
 
 A guided template for integrating a logo into a digital TinyTapeout design.
 
@@ -123,6 +123,9 @@ For Magic logos, simply copy your logo to `logo/mag/logo.mag`.
 Now the magic file can be processed into GDS and LEF files:
 
 ```shell
+# clear existing files
+$ make clean_logo
+# process logo
 $ make
 ```
 
@@ -156,6 +159,9 @@ Place your GDS (and optionally but preferred LEF file in):
 Now the GDS file can be processed into GDS and/or LEF files:
 
 ```shell
+# clear existing files
+$ make clean_logo
+# process logo
 $ make
 ```
 
@@ -187,6 +193,9 @@ The default configuration allows input SVGs to be distilled down into 64x64x1um/
 This may be too large or too small for your purposes, so it can be configured during build-time like:
 
 ```shell
+# clear existing files
+$ make clean_logo
+# process logo
 make LOGO_IMG_H=<my height> LOGO_IMG_W=<my width> LOGO_IMG_U=<my pixel size multiplier>
 ```
 
