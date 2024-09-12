@@ -2,7 +2,7 @@
 
 # TT Logo Digital Integration Test
 
-<img src="docs/readme-ss.png" width="80%" height="80%">
+<img src="docs/readme-ss.png" width="50%" height="50%">
 
 A guided template for integrating a logo into a digital TinyTapeout design.
 
@@ -113,6 +113,10 @@ around a single top-level cell in your GDS file.
 
 Creating pins and/or power nets on your logo design will lead to headaches during the OpenLane flow if your logo does not actually uses these things.
 In the case of Uri Shaked's Skullfet art, these parts are FETs and thus require power, but this will be unecessary for most logos.
+
+**5. Do not place the logo on the very bottom corner of the design:**
+
+If the logo is placed on the bottom corner of the design, the PDN may not like it, move it up and to the left/right a little bit.
 
 ## Logo Input Types
 
@@ -255,16 +259,16 @@ Now we need to integrate some changes into our project configuration to make thi
 
   "//": "obstruct our macro on the decap layer, etc",
   "PDN_OBSTRUCTIONS": [
-    "met4 0 0 120 50"
+    "met4 0 30 30 75"
   ],
   "ROUTING_OBSTRUCTIONS": [
-    "met4 0 0 120 50"
+    "met4 0 30 30 75"
   ],
   "//": "disabled on this for now, its fine in reality",
   "RUN_LVS": false,
 
-  "//": "macro keepout halo", 
-  "PL_MACRO_HALO": "40 40",
+  "//": "macro keepout halo (microns)", 
+  "PL_MACRO_HALO": "60 60",
   "FP_PDN_HORIZONTAL_HALO": 1,
   "FP_PDN_VERTICAL_HALO": 1,
 
@@ -273,10 +277,10 @@ Now we need to integrate some changes into our project configuration to make thi
       "instances": {
         "um_logo": {
           "location": [
-            5,
-            5
+            0,
+            30
           ],
-          "orientation": "N"
+          "orientation": "E"
         }
       },
       "gds": [
